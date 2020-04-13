@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>A simple flexbox-based responsive design</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{width:100%;padding:0;margin:0 auto;}
+        header{background-color:grey;border:1px solid blue;}
+        header h2{margin:0;align-self: center;}
+        header nav ul{list-style:none;padding-left:0;margin:0;}
+        nav ul li{ 
+            padding:10px 15px;color:white;
+            font-weight:bold;background-color:lightslategray;
+            border-bottom:1px solid black;}
+        main{border:1px solid red;margin:10px 0;}
+        section{padding:10px 10px;}
+        aside{border:1px solid grey;background-color:lightgrey;}
+        footer{border:1px solid black;background-color: grey;
+            padding:10px 10px;text-align:center;margin-top:10px;}
+        
+        .article-list article{
+            background-color:lightgrey;
+            border:1px solid;
+            padding:20px 10px;
+        }
+        article div{}
+        img{width:100%;height:100%;}
+        @media screen and (min-width:600px) {
+            header{
+                display:grid;
+                grid-template-columns: 3fr 1fr;
+                height:30vh;
+            }
+            nav{align-self:center;}
+            nav ul{display:flex;}
+            nav ul li{flex:1;border:none;word-break:keep-all;
+                margin:0 5px;text-align:center;background-color:transparent;}
+            .article-list{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+                gap:10px;
+            }
+            main{
+                display:grid;
+                grid-template-columns:3fr 1fr;
+                gap:20px;
+            }
+            footer{clear: both;margin-top:10px;}
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h2>我的web站点</h2>
+    <nav>
+        <ul>
+            <li>菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="content">
+        <section>
+            <h3>这里是网站的介绍</h3>
+            <p>这个网页主要界面会放入图片及它的介绍，在最后边栏放入一些友情链接。。</p>
+            <p>做这个网页是为了练习“响应式布局”，要求布局良好。以下是一
+                些废话反正卜拉拉拉江东父老家啊大家发链接发就发了跌幅巨大
+                浪费空间的是放假啊了发掘的饭卡点击放大了房间啊</p>
+        </section>
+        <div class="article-list">
+            <article>
+                <h3>标题1</h3>
+                <div><img src="Pictures/timg194-1280px.jpg"></div>
+            </article>
+            <article>
+                <h3>标题2</h3>
+                <div><img src="Pictures/1.PNG"></div>
+            </article>
+            <article>
+                <h3>标题3</h3>
+                <div><img src="Pictures/nav1140.PNG"></div>
+            </article>
+        </div>
+    </div>
+    <aside>
+        <ul><li>友情链接1</li></ul>
+    </aside>
+</main>
+<footer>
+    <span>这里是脚部，是用span还是p呢？</span>
+</footer>
+</body>
+
+</html>
